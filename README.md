@@ -15,5 +15,5 @@ npm run serve
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 本应用实现了首页-详情、购物车
+## 因后端接口处于http上，无法将该应用部署到githubPages上(https).请求http的时候回阻塞
