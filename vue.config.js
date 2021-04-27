@@ -27,6 +27,7 @@ module.exports = {
         'content':'components/content',
         'network':'@/network',
         'views':'@/views',
+        'store':'@/store'
       }
     }
   }

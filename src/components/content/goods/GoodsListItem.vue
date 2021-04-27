@@ -1,6 +1,6 @@
 <template>
   <div class="goodslistitem" @click="goodsitemclick">
-      <img :src="goodsItem.show.img" alt="" />
+      <img :src="showimg" alt="" />
       <div class="goods-info">
         <p>{{ goodsItem.title }}</p>
         <span class="price">￥{{ goodsItem.price }}</span>
@@ -20,9 +20,14 @@ export default {
       },
     },
   },
+  computed:{
+    showimg(){
+      return this.goodsItem.image || this.goodsItem.show.img
+    }
+  },
   methods: {
     goodsitemclick() {
-      console.log("点击跳转到详情页");
+      // console.log("点击跳转到详情页");
       this.$router.push('/details/'+this.goodsItem.iid)
     },
   },

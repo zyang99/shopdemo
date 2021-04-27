@@ -38,7 +38,7 @@ import NavBar from "common/navbar/NavBar.vue";
 import Scroll from "common/scroll/Scroll.vue";
 import TabControl from "content/tabControl/TabControl.vue";
 import GoodsList from "content/goods/GoodsList.vue";
-import GoodsListItem from "content/goods/GoodsListItem.vue";
+
 import BackTop from "content/backtop/BackTop.vue";
 
 import HomeSwiper from "./childComps/HomeSwiper";
@@ -56,7 +56,6 @@ export default {
     HomeFeature,
     TabControl,
     GoodsList,
-    GoodsListItem,
     Scroll,
     BackTop,
   },
@@ -84,13 +83,14 @@ export default {
   // 保持home的位置状态 在router-view加上 keep-alive
   // 再在这里实现
   activated(){  
-    console.log(this.saveY);
+    // console.log(this.saveY);
     this.$refs.scroll.refresh()
     this.$refs.scroll.scrollTo(0,this.saveY,0)
+    // this.$refs.scroll.refresh()
   },
   deactivated(){
     this.saveY = this.$refs.scroll.scroll.y;
-    console.log(this.saveY);
+    // console.log(this.saveY);
   },
   // 在页面创建就请求数据
   created() {

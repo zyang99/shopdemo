@@ -24,7 +24,10 @@ const routes = [
   },
   {
     path: '/details/:id',
-    component: Details
+    component: Details,
+    meta:{
+      title:'详情页'
+    }
   },
   {
     path: '/category',

@@ -10,6 +10,8 @@
         <TabControl
           :titles="['商品', '参数', '评论', '推荐']"
           class="detailsTabControl"
+          @tabClick="tabclick"
+          :chooseindex="currentIndex"
         ></TabControl>
       </template>
       <template #right>
@@ -28,15 +30,25 @@ export default {
     NavBar,
     TabControl,
   },
+  props:{
+    currentIndex:{
+      type:Number,
+      default: 0
+    }
+  },
   methods:{
     click(){
-      this.$router.back()
+      this.$router.push('/home')
+    },
+    tabclick(index){
+      // console.log('navbar里点击',index);
+      this.$emit('detailtabclick',index)
     }
   }
 };
 </script>
 
-<style>
+<style scoped>
 .detailsTabControl {
   font-size: 14px;
 }

@@ -22,6 +22,7 @@ export default {
         return [];
       },
     },
+    chooseindex:Number
   },
   data() {
     return {
@@ -30,8 +31,14 @@ export default {
   },
   methods:{
     tabclick(index){
+      // console.log("tabcontrol里点击 ",index);
       this.currentIndex = index;
       this.$emit('tabClick',index);
+    }
+  },
+  watch:{
+    chooseindex(){
+      this.currentIndex = this.chooseindex
     }
   }
 };
